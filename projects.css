@@ -1,0 +1,82 @@
+/* Reset some default styles */
+body, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI',sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: rgb(103, 187, 103);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 84px;
+}
+
+.logo {
+  color:rgb(5, 54, 5);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: rgb(5, 54, 5);
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  font-weight: bold;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  background-color: #226636;
+  
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  top: 38px;
+  z-index: 1;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-content li a {
+  color: black;
+  padding: 10px 15px;
+  display: block;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Page content styling */
+.content {
+    text-align: center;
+    padding: 80px 20px;
+    color: rgb(5, 54, 5);
+}
