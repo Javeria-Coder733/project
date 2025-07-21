@@ -1,34 +1,39 @@
-/* Reset some default styles */
-body, ul {
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI',sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.8;
 }
 
-/* Navbar styles */
 .navbar {
-  background-color: rgb(103, 187, 103);
+  background-color: rgb(110, 12, 97);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 30px;
   height: 84px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .logo {
-  color:rgb(5, 54, 5);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
+  color:rgb(241, 185, 232);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .nav-links li {
@@ -36,47 +41,261 @@ body {
 }
 
 .nav-links a {
-  color: rgb(5, 54, 5);
+  color:rgb(241, 185, 232) ;
+  font-weight: bold;
   text-decoration: none;
   padding: 8px 12px;
-  display: block;
-  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  background-color: #226636;
-  
+.nav-links a:hover {
+  background-color:rgb(110, 12, 97);
+  border-radius: 4px;
+  color:rgb(241, 185, 232) ;
 }
 
-/* Dropdown menu styles */
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 160px;
-  top: 38px;
-  z-index: 1;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  top: 35px;
+  background-color:rgb(110, 12, 97);
+  min-width: 180px;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-content li a {
-  color: black;
-  padding: 10px 15px;
+  color:rgb(241, 185, 232) ;
+  padding: 10px;
   display: block;
 }
 
 .dropdown-content li a:hover {
-  background-color: #f2f2f2;
+  background-color: #eee;
+  color: black;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Page content styling */
-.content {
-    text-align: center;
-    padding: 80px 20px;
-    color: rgb(5, 54, 5);
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5 ) ,rgba(0,0,0,0.5)) url('pexels-jessbaileydesign-2736613.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(110, 12, 97) ;
+  text-align: center;
+  overflow: hidden;
 }
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(241, 185, 232); /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color:rgb(88, 7, 78) ;
+}
+
+.hero-content {
+  max-width: 750px;
+  animation: fadein 2s ease forwards;
+}
+
+.hero-content h1{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.cta-btn {
+  background-color:rgb(110, 12, 97) ;
+  padding: 14px 30px;
+  color:rgb(241, 185, 232);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+.cta-btn:hover {
+  background-color:rgb(218, 50, 190) ;
+  transform: scale(1.1);
+}
+.about{
+    padding: 80px 20px;
+    text-align: center;
+    background:rgb(241, 185, 232) ;
+}
+.about h1{
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+    color: rgb(73, 7, 64);
+}
+
+.about-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.card{
+    background:rgb(73, 7, 64);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(19, 18, 18)0.1;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color:rgb(241, 185, 232);
+    
+}
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.services{
+    padding: 80px 20px;
+    background:rgb(73, 7, 64) ;
+    text-align: center;
+}
+.services h1{
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    
+    color:rgb(241, 185, 232)  ;
+}
+.services-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.service-item{
+    background:rgb(241, 185, 232) ;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    color:rgb(73, 7, 64)  ;
+}
+.service-item:hover{
+    transform: translateY(-10px);
+
+}
+.service-item img{
+    width: 20%;
+    height: 120;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.contact{
+    padding: 80px 20px;
+    text-align: center;
+    background:rgb(241, 185, 232);
+    color: rgb(73, 7, 64);
+
+}
+.contact h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: rgb(73, 7, 64);
+    
+}
+#contact-form{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#contact-form input,
+#contact-form textarea{
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+#contact-form textarea{
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+
+#contact-form button {
+    padding: 12px;
+    background-color: rgb(73, 7, 64);
+    color: rgb(252, 210, 245);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 50px;
+}
+
+#contact-form button:hover{
+    background-color:rgb(241, 185, 232) ;
+    color: rgb(73, 7, 64);
+}
+footer{
+    background-color:rgb(73, 7, 64) ;
+    color:rgb(241, 185, 232) ;
+    text-align: center;
+    padding: 20px;
+}
+@keyframes fadeln{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@media (max-width: 768px){
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        padding: 20px;
+    }
+}
+.nav-links.active{
+    display: flex;
+    
+}
+.hamburger{
+    display: block;
+}
+.dropdown-content{
+    position: static;
+    background-color:rgb(73, 7, 64) ;
+}
+.hero-content h1{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+
+
+}
+.hero-content p{
+    font-size: 1.2rem;
+}
+
+
